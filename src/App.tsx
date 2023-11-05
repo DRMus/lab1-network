@@ -5,6 +5,7 @@ import {
   Form,
   Input,
   Layout,
+  Select,
   Space,
   Spin,
   Typography,
@@ -43,8 +44,14 @@ function App() {
       <ActionCard title="Запрос">
         <Form<FormFields> onFinish={onFormFinish}>
           <FormSpace>
-            <Form.Item name="rules">
-              <Input placeholder="Введите команду" type="text" required />
+            <Form.Item name="rules" required>
+              <Select>
+                <Select.Option value={"ping"}>ping</Select.Option>
+                <Select.Option value={"ipconfig"}>ipconfig</Select.Option>
+                <Select.Option value={"pathping"}>pathping</Select.Option>
+                <Select.Option value={"netstat"}>netstat</Select.Option>
+              </Select>
+              {/* <Input placeholder="Введите команду" type="text" required /> */}
             </Form.Item>
             <Form.Item>
               <Button type="primary" htmlType="submit">
