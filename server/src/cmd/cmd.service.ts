@@ -5,7 +5,7 @@ import { decode, encode } from 'iconv-lite';
 
 const execPromise = (cmd: string) =>
   new Promise<string>((resolve, reject) => {
-    const proc = exec("chcp 65001 | " + cmd, { timeout: 5000 }, (err, stdout, stderr) => {
+    const proc = exec("chcp 65001 | " + cmd, { timeout: 15000 }, (err, stdout, stderr) => {
       if (err && err.signal !== "SIGTERM") {
         reject(err.message);
         return;
