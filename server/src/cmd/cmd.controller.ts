@@ -10,4 +10,9 @@ export class CmdController {
   createCommand(@Body() dto: CmdDto) {
     return this.cmdService.createCMD(dto);
   }
+
+  @Post("/delete")
+  killAllCommands() {
+    return this.cmdService.killAll();
+  }
 }
